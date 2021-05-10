@@ -45,15 +45,10 @@
           style="background: radial-gradient(circle, #fff 0%, #fff0 75%)"
         ></div>
         <CreditCard :variant="0" class="z-30" style="" />
-        <CreditCard
-          :variant="1"
-          class="z-20"
-          style="transform: rotate(-18deg) translate(-75%, 10%)"
-        />
+        <CreditCard :variant="1" class="z-20 page__body__card2_animation" />
         <CreditCard
           :variant="2"
-          class="z-10"
-          style="transform: rotate(-38deg) translate(-140%, 0%)"
+          class="z-10 page__body__card3_animation"
         />
       </div>
     </div>
@@ -161,6 +156,25 @@ h2 {
 }
 .page__body__cards .credit_card__container {
   @apply absolute top-0 right-0;
+}
+
+.page__body__card2_animation {
+  transform: rotate(-18deg) translate(-75%, 10%);
+  animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card2-slidein;
+}
+@keyframes card2-slidein {
+  from {
+    transform: rotate(0deg) translate(0%, 0%);
+  }
+}
+.page__body__card3_animation {
+  transform: rotate(-38deg) translate(-140%, 0%);
+  animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card3-slidein;
+}
+@keyframes card3-slidein {
+  from {
+    transform: rotate(0deg) translate(0%, 0%);
+  }
 }
 
 .page__footer {
