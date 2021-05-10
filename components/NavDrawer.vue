@@ -1,9 +1,9 @@
 <template>
   <div class="nav_drawer__container">
-    <div class="nav_drawer__brand">
+    <NuxtLink tag="div" to="/" class="nav_drawer__brand">
       <Icon class="ml-0.5 mr-1" variant="disc" :size="44" />
       <h3 class="text-sm font-extrabold">CONTRAST.</h3>
-    </div>
+    </NuxtLink>
 
     <div class="nav_drawer__menu">
       <div class="nav_drawer__item">
@@ -122,6 +122,7 @@ h3 {
   @apply mt-3 mb-5 mx-4;
   @apply flex items-center;
   font-family: "TexGyreHeros";
+  @apply cursor-pointer;
 }
 
 .nav_drawer__item {

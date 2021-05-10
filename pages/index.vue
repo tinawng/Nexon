@@ -5,11 +5,11 @@
         <circle stroke="#E7FA50" cx="12" cy="12" r="10"></circle>
         <circle stroke="#E7FA50" fill="#E7FA50" cx="12" cy="12" r="3"></circle>
       </svg>
-      <h3><a class="ml-auto" href="/cards">Solution</a></h3>
-      <h3><a class="ml-auto" href="/cards">Customers</a></h3>
-      <h3><a class="ml-auto" href="/cards">Saving & Rewards</a></h3>
-      <h3><a class="ml-auto" href="/cards">Resources</a></h3>
-      <h3><a class="ml-auto" href="/cards">Pricing</a></h3>
+      <NuxtLink to="/cards" tag="h3">Solution</NuxtLink>
+      <NuxtLink to="/cards" tag="h3"> Customers </NuxtLink>
+      <NuxtLink to="/cards" tag="h3"> Saving & Rewards </NuxtLink>
+      <NuxtLink to="/cards" tag="h3"> Resources </NuxtLink>
+      <NuxtLink to="/cards" tag="h3"> Pricing </NuxtLink>
       <a class="ml-auto" href="">Sign In</a>
     </div>
     <div class="page__body">
@@ -44,12 +44,9 @@
           class="absolute -top-10 right-8 h-96 w-96"
           style="background: radial-gradient(circle, #fff 0%, #fff0 75%)"
         ></div>
-        <CreditCard :variant="0" class="z-30" style="" />
+        <CreditCard :variant="0" class="z-30" />
         <CreditCard :variant="1" class="z-20 page__body__card2_animation" />
-        <CreditCard
-          :variant="2"
-          class="z-10 page__body__card3_animation"
-        />
+        <CreditCard :variant="2" class="z-10 page__body__card3_animation" />
       </div>
     </div>
     <div class="page__footer">
@@ -123,7 +120,7 @@ h2 {
 }
 
 .page__container {
-  @apply w-full;
+  @apply min-h-screen w-full;
   @apply flex flex-col;
 }
 
@@ -133,9 +130,9 @@ h2 {
   @apply bg-brand-accent;
   @apply flex  items-center;
 }
-.page__header > h3 > a {
+.page__header > h3 {
   @apply mr-8;
-  @apply border-none;
+  @apply cursor-pointer;
 }
 
 .page__body {
