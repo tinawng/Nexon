@@ -1,8 +1,8 @@
 <p align="center">
-    <img src="https://cdn.dribbble.com/users/517584/screenshots/15537187/media/058812fa13247d01237aac7a02438b6e.png?compress=1&resize=800x600"/>
-    <img src="https://cdn.dribbble.com/users/517584/screenshots/15537187/media/4f678de467a31f40e76a14b7632805cb.png?compress=1&resize=800x600"/>
-    <img src="https://cdn.dribbble.com/users/517584/screenshots/15585334/media/f2f52dbdd90c42bea34302595ff933d0.png?compress=1&resize=800x600"/>
-    <img src="https://cdn.dribbble.com/users/517584/screenshots/15585334/media/589cdbab6ef7ff868b68d9421a24d9bd.png?compress=1&resize=800x600"/>
+    <img src="./.github/058812fa13247d01237aac7a02438b6e.webp"/>
+    <img src="./.github/4f678de467a31f40e76a14b7632805cb.webp"/>
+    <img src="./.github/f2f52dbdd90c42bea34302595ff933d0.webp"/>
+    <img src="./.github/589cdbab6ef7ff868b68d9421a24d9bd.webp"/>
 </p>
 
 #### 🙌 HUGE credit to *Alexander Plyuto* for this very cool design! Check his *[instagram](https://www.instagram.com/dvlvwe/)* and *[dribbble](https://dribbble.com/alexplyuto)*.
