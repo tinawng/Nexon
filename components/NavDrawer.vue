@@ -2,7 +2,7 @@
   <div class="nav_drawer__container">
     <NuxtLink tag="div" to="/" class="nav_drawer__brand">
       <Icon class="ml-0.5 mr-1" variant="disc" :size="44" />
-      <h3 class="text-sm font-extrabold">CONTRAST.</h3>
+      <h3 class="text-base font-extrabold">Nexon</h3>
     </NuxtLink>
 
     <div class="nav_drawer__menu">

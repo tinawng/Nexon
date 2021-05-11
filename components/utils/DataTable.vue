@@ -29,11 +29,11 @@
     </div>
     <div
       class="data_table__row"
-      v-for="(data, index) in datas"
+      v-for="data in datas"
       :key="data.card_id"
-      :ref="`table-row`"
+      :ref="`table-row-${data.card_id}`"
       @click="
-        selectRow(index);
+        selectRow(data.card_id);
         openModal();
       "
     >
@@ -154,8 +154,15 @@ export default {
   }),
 
   methods: {
+    getRowsDOMElementsList() {
+      var dom_elements_list = []
+      for (const ref in this.$refs) {
+        dom_elements_list.push(this.$refs[ref][0]);
+      }
+      return dom_elements_list
+    },
     orderBy(header, direction) {
-      this.$refs[`table-row`].forEach((el) => {
+      this.getRowsDOMElementsList().forEach((el) => {
         el.classList.add("data_table__row_hide");
       });
       setTimeout(() => {
@@ -165,20 +172,18 @@ export default {
           return direction == "asc" ? res : -res;
         });
         setTimeout(() => {
-          this.$refs[`table-row`].forEach((el) => {
+          this.getRowsDOMElementsList().forEach((el) => {
             el.classList.remove("data_table__row_hide");
           });
         }, 50);
       }, 300);
     },
-
     selectRow(index) {
-      this.$refs[`table-row`].forEach((el) => {
+      this.getRowsDOMElementsList().forEach((el) => {
         el.classList.remove("data_table__row_selected");
       });
-      this.$refs[`table-row`][index].classList.add("data_table__row_selected");
+      this.$refs[`table-row-${index}`][0].classList.add("data_table__row_selected");
     },
-
     openModal() {
       this.$nuxt.$emit("modal-open");
     },
