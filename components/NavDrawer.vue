@@ -6,7 +6,7 @@
     </NuxtLink>
 
     <div class="nav_drawer__menu">
-      <div class="nav_drawer__item">
+      <NuxtLink tag="div" to="/transactions" class="nav_drawer__item">
         <Icon
           class="nav_drawer__item__icon"
           variant="money"
@@ -15,8 +15,8 @@
         />
         <h3>Transaction</h3>
         <div class="nav_drawer__item__pill">2</div>
-      </div>
-      <div class="nav_drawer__item">
+      </NuxtLink>
+      <NuxtLink tag="div" to="/cards"  class="nav_drawer__item">
         <Icon
           class="nav_drawer__item__icon"
           variant="card"
@@ -24,7 +24,7 @@
           :stroke="2.5"
         />
         <h3>Cards</h3>
-      </div>
+      </NuxtLink>
       <div class="nav_drawer__item">
         <Icon
           class="nav_drawer__item__icon"
@@ -134,6 +134,9 @@ h3 {
 }
 .nav_drawer__item:hover {
   @apply rounded-sm bg-brand-accent;
+}
+.nav_drawer__item:hover .nav_drawer__item__pill {
+  @apply bg-brand-white;
 }
 .nav_drawer__item__icon {
   @apply mr-4;

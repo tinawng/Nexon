@@ -5,7 +5,11 @@
         Cards
         <h4 class="ml-3 mb-1 tracking-widest">56</h4>
       </h1>
-      <utils-input icon="magnify" width="28" placeholder="Cards search"></utils-input>
+      <utils-input
+        icon="magnify"
+        width="28"
+        placeholder="Cards search"
+      ></utils-input>
       <div class="flex">
         <utils-button class="mr-8" icon="sliders">Customize table</utils-button>
         <utils-button icon="list" dark />
@@ -13,10 +17,10 @@
       </div>
       <utils-button>New Card</utils-button>
     </div>
-    <utils-data-table />
+    <utils-data-tables-cards />
 
     <transition name="slide-fade">
-      <utils-modal v-if="show_modal" />
+      <utils-modals-card v-if="show_modal" />
     </transition>
   </div>
 </template>

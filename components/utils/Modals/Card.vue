@@ -13,7 +13,7 @@
           <CreditCard class="mt-2 mx-auto transform origin-top scale-75"/>
         </div>
         <div class="modal__text">
-          <h2>Tina Wang's card</h2>
+          <span class="text-lg font-bold leading-none">Tina Wang's card</span>
           <hr />
           <h5>TYPE</h5>
           <div class="modal__text__row">

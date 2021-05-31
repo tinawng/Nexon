@@ -1,6 +1,7 @@
 <template>
   <div class="input__container" :style="`width: ${width}rem`">
     <input
+      class="w-full"
       :class="{ 'border-b border-brand-light': underline }"
       type="text"
       :placeholder="placeholder"
