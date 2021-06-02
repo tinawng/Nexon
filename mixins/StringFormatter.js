@@ -1,7 +1,6 @@
 export default {
   methods: {
     formatPrice: function (price) {
-
       var [full, partial] = price.toFixed(2).toString().split('.');
 
       full = full.split("").reverse().join("");
@@ -10,6 +9,14 @@ export default {
 
 
       return `$${full}.${partial}`;
+    },
+    formatHour: function (date) {
+      if (typeof date === "string") date = new Date(date);
+      return date.getHours() < 13 ? `${date.getHours()}:${date.getMinutes().toString().padStart(2, '0')} AM` : `${(date.getHours() - 12)}:${date.getMinutes().toString().padStart(2, '0')} PM`;
+    },
+    formatDate: function (date) {
+      if (typeof date === "string") date = new Date(date);
+      return `${date.getDay().toString().padStart(2, '0')}.${date.getMonth().toString().padStart(2, '0')}.${date.getFullYear()}, ${this.formatHour(date)}`;
     }
   }
 }

@@ -45,31 +45,37 @@
             </span>
           </div>
         </div>
+        <utils-data-tables-transactions />
       </div>
+
       <div class="p-12 flex flex-col bg-brand-light">
-        <h2>Requests</h2>
-        <div class="mt-8 border-b border-brand-black">
+        <h2 class="flex items-center">Requests <span class="requests__pill">{{ requests.length }}</span></h2>
+        <div
+          class="requests__request"
+          v-for="(request, index) in requests"
+          :key="index"
+        >
           <span class="flex items-center">
-            <b>$112.30</b>
-            <h4 class="ml-auto">Today, 6:23 PM</h4>
+            <b>{{ formatPrice(request.amount) }}</b>
+            <h4 class="ml-auto">{{ formatDate(request.date) }}</h4>
           </span>
           <div class="mt-6 mb-8 pl-4 border-l border-brand-light-gray">
             <div class="mb-4 flex items-center">
               <img
                 class="h-10 w-10 mr-4 rounded-full"
-                src="https://randomuser.me/api/portraits/women/17.jpg"
+                :src="request.vendor_icon"
                 alt="profile-pic"
               />
               <div class="leading-tight">
-                <b>BestBuy</b>
-                <h4>General Merchandise</h4>
+                <b>{{ request.vendor }}</b>
+                <h4>{{ request.vendor_type }}</h4>
               </div>
             </div>
             <div class="flex items-center">
               <icon class="mr-3" variant="user" :size="18" :stroke="2.5" />
-              <b class="mr-3">Sam Thomas</b>
+              <b class="mr-3">{{ request.author }}</b>
               <h4 class="mr-3">•</h4>
-              <h4>Design</h4>
+              <h4>{{ request.department }}</h4>
             </div>
           </div>
         </div>
@@ -83,10 +89,41 @@
 </template>
 
 <script>
-import Icon from "../components/Icon.vue";
+import string_formatter from "~/mixins/StringFormatter.js";
 export default {
-  components: { Icon },
-  data: () => ({ show_modal: false }),
+  mixins: [string_formatter],
+  data: () => ({
+    show_modal: false,
+    requests: [
+      {
+        amount: 112.3,
+        date: "Jun 01 2021 18:23",
+        vendor: "BestBuy",
+        vendor_type: "General Merchandise",
+        vendor_icon: "/logo-bestbuy.jpg",
+        author: "Sam Thomas",
+        department: "Design",
+      },
+      {
+        amount: 4200,
+        date: "Jun 01 2021 13:04",
+        vendor: "Hotel 'SouthStar'",
+        vendor_type: "Hotel / Travel",
+        vendor_icon: "/logo-hotel.jpg",
+        author: "Julia Fox",
+        department: "Administration",
+      },
+      {
+        amount: 299,
+        date: "Jun 01 2021 10:27",
+        vendor: "SalesForce",
+        vendor_type: "SaaS / Soft",
+        vendor_icon: "/logo-salesforce.jpg",
+        author: "Diane Palmer",
+        department: "Human Resources",
+      },
+    ],
+  }),
   created() {
     this.$nuxt.$on("modal-open", () => {
       this.show_modal = true;
@@ -100,7 +137,12 @@ export default {
 
 <style lang="postcss" scoped>
 .page__container {
-  @apply w-full h-52;
+  @apply w-full max-h-screen;
+  @apply overflow-y-scroll;
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  @apply w-0;
 }
 
 .page__header {
@@ -111,7 +153,24 @@ export default {
 .page__body {
   @apply grid grid-cols-3;
 }
+
+.requests__pill {
+  @apply mt-1 ml-4 py-1 px-3;
+  @apply rounded-full;
+  background-color: #DBDCD5;
+  @apply text-xs;
+}
+.requests__request {
+  @apply mt-6 pt-2;
+  @apply border-b border-brand-black;
+  @apply transition-colors;
+}
+.requests__request:hover {
+  background-color: #DBDCD5;
+}
+
 .summary__container {
+  @apply mx-10 mb-10;
   @apply grid grid-cols-4;
 }
 .summary__container > div {

@@ -8,7 +8,7 @@
     :stroke-width="stroke"
     stroke-linecap="round"
     stroke-linejoin="round"
-    :class="[variant.startsWith('circle-slice') ? 'flip' : '']"
+    :class="[variant.startsWith('circle-slice') || variant.startsWith('log-in') ? 'flip' : '']"
   >
     <g v-if="!variant || variant == 'disc'">
       <circle
@@ -45,6 +45,11 @@
       <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
       <line x1="12" y1="22.08" x2="12" y2="12"></line>
     </g>
+    <g v-else-if="variant == 'log-in'">
+      <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+      <polyline points="10 17 15 12 10 7"></polyline>
+      <line x1="15" y1="12" x2="3" y2="12"></line>
+    </g>
     <g v-else-if="variant == 'file-text'">
       <path
         d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
@@ -53,6 +58,17 @@
       <line x1="16" y1="13" x2="8" y2="13"></line>
       <line x1="16" y1="17" x2="8" y2="17"></line>
       <polyline points="10 9 9 9 8 9"></polyline>
+    </g>
+    <g v-else-if="variant == 'file'">
+      <path
+        d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+      ></path>
+      <polyline points="13 2 13 9 20 9"></polyline>
+    </g>
+    <g v-else-if="variant == 'message'">
+      <path
+        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+      ></path>
     </g>
     <g v-else-if="variant == 'settings'">
       <circle cx="12" cy="12" r="3"></circle>

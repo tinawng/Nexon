@@ -9,7 +9,7 @@ module.exports = {
           'semi-dark': '#353433',
           'gray': '#6E6B68',
           'light-gray': '#8B8986',
-          'light': '#ECEDE7',
+          'light': '#F3F4EF',
           'white': '#FFF',
           'accent': '#E7FA50',
         },
