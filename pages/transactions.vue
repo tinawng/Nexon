@@ -54,6 +54,7 @@
           class="requests__request"
           v-for="(request, index) in requests"
           :key="index"
+          @click="openModal()"
         >
           <span class="flex items-center">
             <b>{{ formatPrice(request.amount) }}</b>
@@ -83,7 +84,7 @@
     </div>
 
     <transition name="slide-fade">
-      <utils-modal v-if="show_modal" />
+      <utils-modals-transaction v-if="show_modal" />
     </transition>
   </div>
 </template>
@@ -132,6 +133,12 @@ export default {
       this.show_modal = false;
     });
   },
+
+  methods: {
+    openModal() {
+      this.$nuxt.$emit("modal-open");
+    },
+  },
 };
 </script>
 
@@ -164,6 +171,7 @@ export default {
   @apply mt-6 pt-2;
   @apply border-b border-brand-black;
   @apply transition-colors;
+  @apply cursor-pointer;
 }
 .requests__request:hover {
   background-color: #DBDCD5;
