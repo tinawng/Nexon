@@ -5,7 +5,7 @@
     <img src="./.github/589cdbab6ef7ff868b68d9421a24d9bd.webp"/>
 </p>
 
-#### 🙌 HUGE credit to *Alexander Plyuto* for this very cool design! Check his *[instagram](https://www.instagram.com/dvlvwe/)* and *[dribbble](https://dribbble.com/alexplyuto)*.
+#### 🙌 HUGE credit to *Alexander Plyuto* for this very cool design! Check his *[instagram](https://www.instagram.com/dvlvwe/)* and *[dribbble](https://dribbble.com/plyuto)*.
  
 # Infos
 I was really inspired by the mockup *Alexander Plyuto* posted on his instagram recently and decided to bring them to life ✨.
@@ -16,7 +16,6 @@ This is just an excercice for me, I got no intention to sell or promote things (
 # Live
 
 ### 🔗 ***[nexon.tina.cafe](http://nexon.tina.cafe/)***
-Served using *[Yeetify 💨](https://github.com/tinawng/yeetify)*
 
 # Stack
 
@@ -36,11 +35,11 @@ Served using *[Yeetify 💨](https://github.com/tinawng/yeetify)*
 
 ```bash
 # install dependencies
-$ yarn install
+$ bun install
 
 # dev server with hot reload
-$ yarn run dev
+$ bun dev
 
 # build for production
-$ yarn run generate
+$ bun run generate
 ```

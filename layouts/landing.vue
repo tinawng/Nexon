@@ -1,10 +1,10 @@
 <template>
   <div class="layout__container">
-    <Nuxt />
+    <NuxtPage />
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .layout__container {
   @apply min-h-screen;
   max-width: 100vw;

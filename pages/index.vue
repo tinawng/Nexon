@@ -1,3 +1,7 @@
+<script setup>
+  definePageMeta({ layout: "landing" })
+</script>
+
 <template>
   <div class="page__container">
     <div class="page__header">
@@ -5,12 +9,12 @@
         <circle stroke="#E7FA50" cx="12" cy="12" r="10"></circle>
         <circle stroke="#E7FA50" fill="#E7FA50" cx="12" cy="12" r="3"></circle>
       </svg>
-      <NuxtLink to="/cards" tag="h3">Solution</NuxtLink>
-      <NuxtLink to="/cards" tag="h3"> Customers </NuxtLink>
-      <NuxtLink to="/cards" tag="h3"> Saving & Rewards </NuxtLink>
-      <NuxtLink to="/cards" tag="h3"> Resources </NuxtLink>
-      <NuxtLink to="/cards" tag="h3"> Pricing </NuxtLink>
-      <a class="ml-auto" href="">Sign In</a>
+      <NuxtLink href="/cards" class="border-0"><h3>Solution</h3></NuxtLink>
+      <NuxtLink href="/cards" class="border-0"><h3>Customers</h3></NuxtLink>
+      <NuxtLink href="/cards" class="border-0"><h3>Saving & Rewards</h3></NuxtLink>
+      <NuxtLink href="/cards" class="border-0"><h3>Resources</h3></NuxtLink>
+      <NuxtLink href="/cards" class="border-0"><h3>Pricing</h3></NuxtLink>
+      <NuxtLink class="ml-auto" href="/cards">Sign In</NuxtLink>
     </div>
     <div class="page__body">
       <div class="page__body__hero">
@@ -25,18 +29,14 @@
         </h2>
         <div class="mt-6 flex">
           <utils-input placeholder="Your email" :underline="true" />
-          <utils-button dark>
-            <div
-              class="flex items-center text-brand-accent hover:text-brand-dark"
-            >
-              Get started
-              <Icon
-                class="ml-2 -mr-2"
-                :size="20"
-                :stroke="2"
-                variant="arrow-right"
-              /></div
-          ></utils-button>
+          <NuxtLink href="/cards" class="border-0">
+            <utils-button dark class="group">
+              <div class="flex items-center text-brand-accent group-hover:text-brand-dark">
+                Get started
+                <Icon class="ml-2 -mr-2" :size="20" :stroke="2" variant="arrow-right" />
+              </div>
+            </utils-button>
+          </NuxtLink>
         </div>
       </div>
       <div class="page__body__cards">
@@ -78,9 +78,7 @@
         <path
           d="M238.1 14.4v21.9h7V21.7h25.6v14.6h7V14.4h-39.6M244.3 7.3h27c3.8-.7 6.5-4.1 7.3-7.3H237c.8 3.2 3.6 6.5 7.3 7.3M216.8 36.3c3.5-1.5 5.4-4.1 6.2-7.1h-31.5V.1h-7.1v36.2h32.4M131.9 7.2h25c3.8-1.1 6.9-4 7.7-7.1H125v21.4h32.4V29H132c-4 1.1-7.4 3.8-9.1 7.3h41.5V14.4H132l-.1-7.2M70.3 7.3h27c3.8-.7 6.6-4.1 7.3-7.3H62.9c.8 3.2 3.6 6.5 7.4 7.3M70.3 21.6h27c3.8-.7 6.6-4.1 7.3-7.3H62.9c.8 3.2 3.6 6.5 7.4 7.3M70.3 36.3h27c3.8-.7 6.6-4.1 7.3-7.3H62.9c.8 3.2 3.6 6.6 7.4 7.3"
         />
-        <path
-          d="M0 .1c.8 3.2 3.6 6.4 7.3 7.2h11.4l.6.2v28.7h7.1V7.5l.6-.2h11.4c3.8-1 6.5-4 7.3-7.2V0L0 .1"
-        />
+        <path d="M0 .1c.8 3.2 3.6 6.4 7.3 7.2h11.4l.6.2v28.7h7.1V7.5l.6-.2h11.4c3.8-1 6.5-4 7.3-7.2V0L0 .1" />
       </svg>
       <svg height="120" viewBox="0 0 192.756 192.756">
         <g fill-rule="evenodd" clip-rule="evenodd">
@@ -105,79 +103,73 @@
   </div>
 </template>
 
-<script>
-export default {
-  layout: "landing",
-};
-</script>
-
 <style lang="postcss" scoped>
-h1 {
-  @apply text-7xl  xl:text-8xl font-medium;
-}
-h2 {
-  @apply text-xl font-normal;
-}
-
-.page__container {
-  @apply min-h-screen w-full;
-  @apply flex flex-col;
-}
-
-.page__header {
-  @apply w-full;
-  @apply p-8;
-  @apply bg-brand-accent;
-  @apply flex  items-center;
-}
-.page__header > h3 {
-  @apply mr-8;
-  @apply cursor-pointer;
-}
-
-.page__body {
-  @apply flex-grow;
-  @apply pb-14 px-40;
-  background: linear-gradient(200deg, #e7fa50 75%, #fff 100%);
-  @apply grid;
-  grid-template-columns: 60% auto;
-}
-.page__body__hero {
-  @apply self-center;
-}
-.page__body__cards {
-  @apply relative;
-  @apply -mt-8;
-
-  @apply transform origin-top-right scale-90 xl:scale-125;
-}
-.page__body__cards .credit_card__container {
-  @apply absolute top-0 right-0;
-}
-
-.page__body__card2_animation {
-  transform: rotate(-18deg) translate(-75%, 10%);
-  animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card2-slidein;
-}
-@keyframes card2-slidein {
-  from {
-    transform: rotate(0deg) translate(0%, 0%);
+  h1 {
+    @apply text-7xl  xl:text-8xl font-medium;
   }
-}
-.page__body__card3_animation {
-  transform: rotate(-38deg) translate(-140%, 0%);
-  animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card3-slidein;
-}
-@keyframes card3-slidein {
-  from {
-    transform: rotate(0deg) translate(0%, 0%);
+  h2 {
+    @apply text-xl font-normal;
   }
-}
 
-.page__footer {
-  @apply h-44;
-  @apply px-40;
-  @apply flex justify-around items-center;
-  @apply bg-brand-dark text-brand-light-gray;
-}
+  .page__container {
+    @apply min-h-screen w-full;
+    @apply flex flex-col;
+  }
+
+  .page__header {
+    @apply w-full;
+    @apply p-8;
+    @apply bg-brand-accent;
+    @apply flex  items-center;
+  }
+  .page__header > a {
+    @apply mr-8;
+    @apply cursor-pointer;
+  }
+
+  .page__body {
+    @apply flex-grow;
+    @apply pb-14 px-40;
+    background: linear-gradient(200deg, #e7fa50 75%, #fff 100%);
+    @apply grid;
+    grid-template-columns: 60% auto;
+  }
+  .page__body__hero {
+    @apply self-center;
+  }
+  .page__body__cards {
+    @apply relative;
+    @apply -mt-8;
+
+    @apply transform origin-top-right scale-90 xl:scale-125;
+  }
+  .page__body__cards .credit_card__container {
+    @apply absolute top-0 right-0;
+  }
+
+  .page__body__card2_animation {
+    transform: rotate(-18deg) translate(-75%, 10%);
+    animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card2-slidein;
+  }
+  @keyframes card2-slidein {
+    from {
+      transform: rotate(0deg) translate(0%, 0%);
+    }
+  }
+  .page__body__card3_animation {
+    transform: rotate(-38deg) translate(-140%, 0%);
+    animation: 1.61s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 card3-slidein;
+  }
+  @keyframes card3-slidein {
+    from {
+      transform: rotate(0deg) translate(0%, 0%);
+    }
+  }
+
+  .page__footer {
+    @apply h-44;
+    @apply px-40;
+    @apply flex justify-around items-center;
+    @apply bg-brand-dark text-brand-light-gray;
+  }
 </style>

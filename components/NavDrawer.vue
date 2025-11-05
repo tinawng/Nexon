@@ -1,12 +1,12 @@
 <template>
   <div class="nav_drawer__container">
-    <NuxtLink tag="div" to="/" class="nav_drawer__brand">
+    <NuxtLink tag="div" to="/" class="nav_drawer__brand border-0">
       <Icon class="ml-0.5 mr-1" variant="disc" :size="44" />
       <h3 class="text-base font-extrabold">Nexon</h3>
     </NuxtLink>
 
     <div class="nav_drawer__menu">
-      <NuxtLink tag="div" to="/transactions" class="nav_drawer__item">
+      <NuxtLink tag="div" to="/transactions" class="nav_drawer__item border-0">
         <Icon
           class="nav_drawer__item__icon"
           variant="money"
@@ -16,7 +16,7 @@
         <h3>Transaction</h3>
         <div class="nav_drawer__item__pill">2</div>
       </NuxtLink>
-      <NuxtLink tag="div" to="/cards"  class="nav_drawer__item">
+      <NuxtLink tag="div" to="/cards"  class="nav_drawer__item border-0">
         <Icon
           class="nav_drawer__item__icon"
           variant="card"
@@ -25,7 +25,7 @@
         />
         <h3>Cards</h3>
       </NuxtLink>
-      <div class="nav_drawer__item">
+      <div class="nav_drawer__item opacity-40">
         <Icon
           class="nav_drawer__item__icon"
           variant="user"
@@ -34,7 +34,7 @@
         />
         <h3>People</h3>
       </div>
-      <div class="nav_drawer__item">
+      <div class="nav_drawer__item opacity-40">
         <Icon
           class="nav_drawer__item__icon"
           variant="upload"
@@ -43,7 +43,7 @@
         />
         <h3>Reimburse</h3>
       </div>
-      <div class="nav_drawer__item">
+      <div class="nav_drawer__item opacity-40">
         <Icon
           class="nav_drawer__item__icon"
           variant="package"
@@ -52,7 +52,7 @@
         />
         <h3>Vendors</h3>
       </div>
-      <div class="nav_drawer__item">
+      <div class="nav_drawer__item opacity-40">
         <Icon
           class="nav_drawer__item__icon"
           variant="file-text"
