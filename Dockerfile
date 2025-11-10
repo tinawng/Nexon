@@ -16,6 +16,11 @@ COPY . .
 # & build
 RUN bun --bun run generate
 
-FROM flashspys/nginx-static AS release
-RUN apk update && apk upgrade
+# compress
+RUN apt update
+RUN apt install brotli
+RUN find .output/public/ \( -iname '*.html' -o -iname '*.css' -o -iname '*.js' \) -exec bash -c 'brotli --best "$0"' {} \;
+RUN find .output/public/ \( -iname '*.html' -o -iname '*.css' -o -iname '*.js' \) -exec bash -c 'gzip -k --best "$0"' {} \;
+
+FROM nginx-static-compressed:latest AS release
 COPY --from=prerelease /usr/src/app/.output/public /static
